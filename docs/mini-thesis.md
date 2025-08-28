@@ -1,34 +1,12 @@
-<!-- PROJECT LOGO -->
-<br />
-<p align="center">
-  <h2 align="center">Autonomous car</h2>
-
-  <p align="center">
-    A very accessible project on autonomous cars using ML
-    <br />
-    
-  </p>
-</p>
-
-### New
-* Added line follower functionality to train faster and without assistance(no need to drive same path endlessly).
-![track][opencvtrack]
-* Added pid functionality to remove erratic movements of steering servo. Change PID values to suit your car.
-* Added Keyboard control for linux OS systems.
-
-
-# ESP32 Autonomous Car: A Mini Thesis
+# ESP32 Autonomous Car: Mini Thesis
 
 ## 1. Abstract
-
-This project presents a comprehensive, low-cost, open-source autonomous car platform based on the ESP32 microcontroller, MicroPython, and machine learning. The car is capable of line following and autonomous navigation using computer vision and a trained neural network. The goal is to democratize autonomous vehicle technology, making it accessible for students, hobbyists, and researchers.
+This thesis presents the design and implementation of a low-cost, open-source autonomous car platform using the ESP32 microcontroller, MicroPython, and machine learning. The car is capable of line following and autonomous navigation using computer vision and a trained neural network. The project aims to democratize autonomous vehicle technology for students, hobbyists, and researchers.
 
 ## 2. Introduction
-
-Autonomous vehicles are transforming transportation, but most practical implementations are either expensive or limited to simulation. This project bridges the gap by enabling users to build, train, and deploy a real autonomous car using affordable hardware and open-source software. It is designed for hands-on learning in robotics, embedded systems, and AI.
+Autonomous vehicles are revolutionizing transportation, but most practical implementations are either expensive or limited to simulation. This project bridges the gap by enabling users to build, train, and deploy a real autonomous car using affordable hardware and open-source software. It is designed for hands-on learning in robotics, embedded systems, and AI.
 
 ## 3. Technology Used
-
 - **MicroPython**: Lightweight Python interpreter for microcontrollers, used for ESP32 firmware.
 - **ESP32**: Wi-Fi-enabled microcontroller for robotics and IoT.
 - **Python**: Used for client-side control, data logging, and model training.
@@ -37,17 +15,14 @@ Autonomous vehicles are transforming transportation, but most practical implemen
 - **Neural Networks (AlexNet)**: Used for training the car to follow lines autonomously.
 
 ## 4. Why This Technology Was Used
-
 - **MicroPython & ESP32**: Chosen for affordability, ease of use, and strong community support. MicroPython allows rapid prototyping and direct hardware control.
 - **Python & OpenCV**: Python’s simplicity and OpenCV’s robust vision capabilities enable fast development and experimentation.
 - **PID Control**: Ensures stable and accurate steering, crucial for real-world navigation.
 - **Neural Networks**: Allow the car to learn complex patterns and adapt to different tracks, making autonomous navigation possible.
 
 ## 5. How It Works
-
 ### System Overview
-
-1. **Hardware Assembly**: Build the car using ESP32, motors, servo, and camera. Refer to the [assembly guide](https://github.com/rakesh-i/ESP32-RC-car/tree/main).
+1. **Hardware Assembly**: Build the car using ESP32, motors, servo, and camera. Refer to the assembly guide.
 2. **Firmware Deployment**: Flash MicroPython scripts (`boot.py`, `main.py`, `motor.py`, `server.py`, `web.py`) to ESP32. Configure Wi-Fi credentials in `server.py` and `web.py`.
 3. **Wireless Communication**: ESP32 connects to a client via Wi-Fi for control and data exchange. The client runs on a PC and communicates using TCP/IP.
 4. **Data Collection**: The car streams video; users drive manually to collect training data using `stream.py` and `linuxClient.py`. Data is saved as `train_data.npy`.
@@ -56,14 +31,12 @@ Autonomous vehicles are transforming transportation, but most practical implemen
 7. **Autonomous Operation**: Deploy the trained model and run `run.py` to enable autonomous navigation. PID control smooths steering and speed.
 
 ### Software Components
-
-- **Files for ESP32/**: Contains MicroPython scripts for hardware control and server setup.
+- **Files for ESP32/**: MicroPython scripts for hardware control and server setup.
 - **Client/**: Python scripts for PC-side control, logging, and communication.
 - **OpenCV Line Follower and Trainer/**: Scripts for vision-based line following, data balancing, and model training.
-- **Training/**: Contains scripts for streaming, logging, and running the trained model.
+- **Training/**: Scripts for streaming, logging, and running the trained model.
 
 ### Hardware Components
-
 - **ESP32 Board**: Main controller for the car.
 - **Motors & Motor Driver**: For movement and steering.
 - **Servo Motor**: For steering control.
@@ -71,9 +44,7 @@ Autonomous vehicles are transforming transportation, but most practical implemen
 - **Power Supply**: Battery pack for mobility.
 
 ## 6. Hardware and Software Components
-
 ### Hardware
-
 - ESP32 microcontroller
 - Motor driver (L298N or similar)
 - DC motors
@@ -82,7 +53,6 @@ Autonomous vehicles are transforming transportation, but most practical implemen
 - Chassis, wheels, battery
 
 ### Software
-
 - MicroPython firmware
 - Python 3.x
 - OpenCV
@@ -90,7 +60,6 @@ Autonomous vehicles are transforming transportation, but most practical implemen
 - Custom scripts for data collection, training, and autonomous operation
 
 ## 7. Advantages
-
 - **Low Cost**: Uses affordable, widely available components.
 - **Open Source**: All code and instructions are freely available.
 - **Modular Design**: Easy to modify and extend for new features.
@@ -98,7 +67,6 @@ Autonomous vehicles are transforming transportation, but most practical implemen
 - **Real-World Application**: Moves beyond simulation to actual hardware.
 
 ## 8. Future Scope
-
 - **Advanced Vision**: Integrate object detection, obstacle avoidance, and lane detection.
 - **Sensor Fusion**: Add ultrasonic, infrared, or LIDAR sensors for enhanced perception.
 - **Cloud Connectivity**: Enable remote monitoring and control via IoT platforms.
@@ -106,7 +74,6 @@ Autonomous vehicles are transforming transportation, but most practical implemen
 - **Swarm Robotics**: Coordinate multiple autonomous cars for collaborative tasks.
 
 ## 9. References
-
 - [Sentdex GTA V autonomous vehicles](https://github.com/Sentdex/pygta5)
 - [MicroPython](https://micropython.org/)
 - [Arduino](https://www.arduino.cc/)
@@ -114,9 +81,7 @@ Autonomous vehicles are transforming transportation, but most practical implemen
 - [AlexNet](https://github.com/tflearn/tflearn/blob/master/examples/images/alexnet.py)
 
 ## 10. Result
-
 After following the assembly and training steps, the ESP32 autonomous car is able to follow a track using computer vision and a trained neural network. The car demonstrates smooth steering and reliable navigation, as shown in the following images:
 
-<img src="media/test3.gif" alt="Test Run" width="800" height="500">
-<img src="media/ontrack.gif" alt="On Track" width="800" height="500">
-
+![Test Run](media/test3.gif)
+![On Track](media/ontrack.gif)
